@@ -1,0 +1,42 @@
+Q : Tell me something about Linux what u Know
+
+Shell Script :- A shell script is a list of commands in a computer program that is run by the Unix shell which is a command line interpreter. A shell script usually has comments that describe the steps. The different operations performed by shell scripts are program execution, file manipulation and text printing. 
+There are two major types of shells in Linux. Those are:
+	1) Bourne Shell - This is the default shell for version 7 Unix.
+	2) C Shell - This is a Linux shell and a command processor that is run in a text window.
+e.g :- find, echo, touch...etc
+
+Corn :- Cron is a work schedule hypervisor that runs assignments at prescribed times. These activities are referred to as Cron jobs, and they are typically used to optimize security management. Cron employment can be meant to launch every half hour, minute, day after the month, quarter, week of the year, or a confluence of these time intervals. 
+
+Top :- The top command displays all the running process within the environment of your system. It helps in monitoring system usage and performances. It is mainly used to detect load on the server by system administrators.
+
+PS :- The ps command is used to view currently running processes on the system. It helps us to determine which process is doing what in our system, how much memory it is using, how much CPU space it occupies, user ID, command name, etc .
+
+Kill :- In Linux, the kill command (located inside the /bin/kill) can be defined as a built-in command.It is used for manually terminating the processes. The behaviour of the kill command is slightly different among the shells and the /bin/kill standalone executable.
+
+SCP :- scp (secure copy) command in Linux system is used to copy file(s) between servers in a secure way. The SCP command or secure copy allows the secure transferring of files between the local host and the remote host or between two remote hosts. 
+
+SSH :- In Linux, ssh is a protocol, which stands for Secure Shell or Secure Socket Shell. The secure shell is useful for security while connecting to a remote server. The ssh command uses a ssh protocol, which is a secure protocol, as the data transfer between the client and the host takes place in encrypted form. It transfers the input through the client to the host and returns the output transferred by the host. It executes through TCP/IP port 22.
+
+TAR :- The tar command in Linux is one of the most essential commands when it comes to file management. It is short for Tape Archive and is used to create and extract archive files. An archive file is a compressed file that contains one or more files bundled together for more accessible storage and portability.
+
+YUM :- yum is the primary tool for getting, installing, deleting, querying, and managing Linux RPM software from Linux repositories, as well as other third-party repositories.
+
+APT :- If you are using Linux as your operating system, then you might be familiar with apt command. Apt stands for "Advanced Package Tool" and it is a package manager.Apt is a command-line tool that allows users to search, install, remove, and manage software packages on their Linux system. 
+
+Systemctl :- Systemctl is a Linux command-line utility used to control and manage systemd and services. You can think of Systemctl as a control interface for Systemd init service, allowing you to communicate with systemd and perform operations.
+
+ifconfig :- ifconfig(interface configuration) command is used to configure the kernel-resident network interfaces. 
+
+Permissions :- All the three owners (user owner, group, others) in the Linux system have three types of permissions defined. 
+	Read (r) : The read permission allows you to open and read the content of a file. But you can't do any editing or modification in the file.
+	Write (w) : The write permission allows you to edit, remove or rename a file. For instance, if a file is present in a directory, and write permission is set on the file but not on the directory, then you can edit the content of the file but can't remove, or rename it.
+	Execute (x): In Linux type system, you can't run or execute a program unless execute permission is set.But in Windows, there is no such permission available.
+
+Editors :-  Linux text editors can be used for editing text files, writing codes, updating user instruction files, and more. A Linux system supports multiple text editors. There are two types of text editors in Linux, which are given below:
+	Command-line text editors - such as Vi, nano, pico, and more.
+	GUI text editors - such as gedit (for Gnome), Kwrite, and more.
+
+Installation of wordpress, lamp stack ,mysql,nginx, httpd with virtual directories,tomcat with users, zabbix agents
+
+
