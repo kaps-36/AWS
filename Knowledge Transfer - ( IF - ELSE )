@@ -1,44 +1,38 @@
+Knowledge Transfer <  IF - ELSE >
 
-**Purpose Title:**
+By Kashif Quadri - ON 17/07/2023
 
-How to use IF-ELSE in Shell Scripting
-
-================================================================
-
+**Challenge :**
+I got task to do daily /hourly /every 5 min need to check file server if any file js or py uploaded by developer team 
+then need copy in diff destination if py then copy to server1 and js then server2 , this was hectic job for me 
+to do daily manually check/copy...
+==================================================================================
+**Solution :**
+I founded a solution with bash script, i just made if logic shell script and added cron job to run every 5 min...
+wow! now this is called as a smart work...
+==================================================================================
 **Pre-requisites:**
-
-- How to use conditions
-- How to execute a bash script.
-
-================================================================
-
+How to use conditions
+How to execute a bash script.
+==================================================================================
 **Objective:**
-
 To learn the four conditional keywords namely, if, else, then, fi.
-
-================================================================
+==================================================================================
 **Description:**
-
 One of the most important parts of conditional programming is the if-else statements. An if-else statement allows you to execute iterative conditional statements in your code. We use if-else in shell scripts when we wish to evaluate a condition, then decide to execute one set between two or more sets of statements using the result.
-
 This essentially allows us to choose a response to the result which our conditional expression evaluates to.
-
-================================================================
-
+==================================================================================
 **Syntax:**
-
-if [condition]
-then
-   statement1
-else
-   statement2
-fi
-================================================================
-
+	if [condition]
+	then
+   		statement1
+	else
+   		statement2
+	fi
+==================================================================================
 **Steps:**
 
 **#Use Shebang always before starting the script**
-
 -> #! /bin/bash
 --> echo Hi, welcome to Hyderabad Motor driving school
 --> echo Register to your name here
@@ -46,27 +40,20 @@ fi
 --> echo welcome $name
 --> echo May I know your age
 --> read age
-
 **#Using IF command to start the conditional statement**
 --> if [ $age -ge 18 ]
-
 **#Using of then command**
 --> then
               echo you are eligible for driving
 **#Using of else command**
-
 --> else
               echo you are not eligible for driving
 **#You have to reverse the IF command to close the conditional statement**
-
 --> fi 
-
-================================================================
-
+==================================================================================
 **Output:**
 
 **#In this condition code block is True and the permission is granted for driving**
-
 --> ./greeting.sh
 --> Hi, welcome to Hyderabad Motor driving school
 --> Register to your name here
@@ -77,7 +64,6 @@ fi
 --> you are eligible for driving
 
 **#In this condition code block is False and the permission is denied for driving**
-
 --> ./greeting.sh
 --> Hi, welcome to Hyderabad Motor driving school
 --> Register to your name here
