@@ -1,0 +1,65 @@
+By Kashif Quadri
+18/07/2023
+
+**Challenge :**
+I got task to do daily /hourly /every 5 min need to check file server if any file js or py uploaded by developer team then need copy in diff destination if py then copy to server1 and js then server2 , this was hectic job for me to do daily manually check/copy...
+==================================================================================
+**Solution :**
+I founded a solution with bash script, i just made if logic shell script and added cron job to run every 5 min...
+wow! now this is called as a smart work...
+==================================================================================
+**Pre-requisites:**
+•	How to use conditions
+•	How to execute a bash script.
+•	How to use automation daily
+==================================================================================
+**Objective:**
+To learn the four conditional keywords namely, if, else, then, fi.
+==================================================================================
+**Description:**
+One of the most important parts of conditional programming is the if-else statements. An if-else statement allows you to execute iterative conditional statements in your code. We use if-else in shell scripts when we wish to evaluate a condition, then decide to execute one set between two or more sets of statements using the result.This essentially allows us to choose a response to the result which our conditional expression evaluates to.
+==================================================================================
+**Syntax:**
+	if [condition]
+	then
+   		statement1
+	else
+   		statement2
+	fi
+==================================================================================
+**Steps:**
+**#First install crontab for automation**
+	Crontab  –e
+	***** bash /home/ec2-user/{filename.sh} (add timer and save n exit)
+	vi {filename.sh}
+Script:
+**#Use Shebang always before starting the script**
+#!/bin/bash
+**#Give a variable your current path name where the files exist**
+filepath = "/home/ec2-user"
+if [  -e $filepath ]  #use of -e refer to see whether the file is in the directory or not
+then
+        mv *.py /home/ec2-user/python/python  #use *.extension to copy all the same file at once
+else
+        "backup complete"
+fi
+if [  -e $filepath ]
+then
+        mv *.html /home/ec2-user/python/java
+else
+        "backup complete"
+fi
+==================================================================================
+**Output:**
+
+	[ec2-user@ip-172-31-12-84 ~]$ mkdir java python
+	[ec2-user@ip-172-31-12-84 ~]$ ls
+	backup.sh  java  python
+	[ec2-user@ip-172-31-12-84 ~]$ touch kashif.html
+	[ec2-user@ip-172-31-12-84 ~]$ touch quadri.py
+	[ec2-user@ip-172-31-12-84 ~]$ ls
+	backup.sh  java  kashif.html  python  quadri.py
+*#Wait for the 2min or else use bash command**
+	[ec2-user@ip-172-31-12-84 ~]$ bash backup.sh
+	[ec2-user@ip-172-31-12-84 ~]$ ls
+	backup.sh  java  python  serveroff.sh
