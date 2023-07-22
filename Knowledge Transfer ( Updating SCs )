@@ -1,0 +1,41 @@
+Knowledge Transfer 
+< Update Security Rules >
+
+By Kashif Quadri
+22/07/2023
+
+**Challenge :**
+I got a task to run TOMCAT in AWS Linux but the web page is not showing the Tomcat Apache page so my whole work in due and being late due to that, I have to search a solution to it… 
+==================================================================================
+**Task :**
+Ticket: Priority ticket to update security rules in ec2 linux?
+==================================================================================
+**Solution :**
+Yes!! I founded a solution to run the web page to run my Tomcat apache software and WOW it’s was very simple to do it using some clicks in security rules… 
+==================================================================================
+**Pre-requisites:**
+•	Have a good knowledge about EC2
+•	Know the all operations in EC2 instance
+==================================================================================
+**Objective:**
+To learn how to solve the web-page error in EC2 Instance
+==================================================================================
+**Description:**
+Running a web application on an EC2 instance can offer excellent performance and flexibility, but encountering webpage errors is not uncommon. By understanding these common issues and following the troubleshooting steps outlined above, you can efficiently resolve problems and maintain a smooth web presence for your users. Regular monitoring, staying updated with the latest patches, and adopting best practices in web development and server management will help reduce the likelihood of encountering these errors in the future.
+==================================================================================
+**Steps:**
+First Select EC2 Instance
+Go to Summary
+Security
+Click Security Group Link
+Action
+Edit Inbound Rules
+Add Rules
+# Then add rules according to your webpage error.
+# This is the example to solve Tomcat error –
+Select Custom TCP
+Port range add 8080  #This port range will be vary for different software.
+Source Anywhere IPV4
+Finally Save
+# Now again run the Web Page and See…. 
+
