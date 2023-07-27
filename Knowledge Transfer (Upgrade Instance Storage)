@@ -1,0 +1,36 @@
+By Kashif Quadri
+22/07/2023
+
+**Challenge :**
+Hey Guys, Today’s Challenge is something different you have a Instance with some storage but as using it regularly there have been some storage issues and the instance is becoming slow and performance also becoming low , that’s why search a solution to upgrade the storage.
+==================================================================================
+**Task :**
+Ticket: End user requested for upgrade storage...
+==================================================================================
+**Solution :**
+Oh yes, I have solved the challenge there a option to upgrade the volume’s as per our need and it’s very easy to execute it in EC2…. Come I will show you below..
+==================================================================================
+**Pre-requisites:**
+•	Have a good knowledge about EC2
+•	Know the all operations in EC2 instance
+==================================================================================
+**Objective:**
+To learn if the storage error comes in hand how to solve it..
+==================================================================================
+**Description:**
+Amazon Elastic Compute Cloud (Amazon EC2) is a cloud computing service that allows users to rent virtual servers, known as instances, on the Amazon Web Services (AWS) cloud platform. These instances are equipped with storage volumes that provide the necessary space for storing data, operating systems, applications, and other files. Over time, as your application and data storage needs grow, you may find it necessary to upgrade the storage volume of your EC2 instance to accommodate increased demands. 
+Upgrading the storage volume of an EC2 instance is a straightforward process, thanks to the flexibility and scalability of Amazon EBS volumes. By following best practices, such as backing up data and monitoring performance, you can seamlessly enhance your EC2 instance's storage capacity to meet the evolving demands of your applications and ensure a smooth user experience.
+==================================================================================
+**Steps:**
+First go to EC2
+Then select Volumes from Elastic Block Store 
+Volumes
+Action
+Modify Volumes
+Change the Size from the Size Box
+#You can add size requirement as per your need…But once the size is increased it cannot be decreased 
+#Note : EBS pay as you allocate…
+ Done
+
+Hence You’re Volume for Instance is Increased and you can save more Data in it…
+
