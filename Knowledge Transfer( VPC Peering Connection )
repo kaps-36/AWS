@@ -1,0 +1,60 @@
+By Kashif Quadri
+08/08/2023
+
+**Challenge :**
+Hey geeks, today I want to give a task that you have Design a secure VPC peering connection that seamlessly links two geographically distinct virtual networks while ensuring data integrity and minimal latency.  
+==============================================================================
+**Task :**
+Ticket: Creating VPC peering connection that seamlessly links two virtual networks.==============================================================================
+**Solution :**
+Finally I have got the solution to Establish the VPC peering connection by requesting it in the AWS and by creating a peering connection in the source VPC, specifying the target VPC's unique ID and essential settings. Accept the peering request in the target VPC.
+==============================================================================
+**Pre-requisites:**
+•	Have a good knowledge about VPC
+•	Know the all operations in VPC
+•	Know tools about VPC
+==============================================================================
+**Objective:**
+To learn how to Connect VPC within the 2 regions without latency.
+==============================================================================
+**Description:**
+VPC (Virtual Private Cloud) peering connections are a fundamental networking feature in cloud computing, enabling seamless and secure communication between separate virtual networks within the same cloud provider, such as Amazon Web Services (AWS). This technology empowers organizations to extend their network architecture and create a cohesive environment by interconnecting VPCs, even across different regions. VPC peering eliminates the need for complex and costly hardware-based solutions, fostering efficient data exchange while maintaining the scalability, flexibility, and cost-effectiveness characteristic of cloud infrastructures.
+Through VPC peering connections, resources like instances, containers, and databases within distinct VPCs can communicate as if they were on the same network, without exposing their private IP addresses to external networks. 
+==============================================================================
+**Steps:**
+######...IN THIS STEPS WE CREATING SAME ACCOUNT PEERING CONNECTION IF YOUR INTRESTD TO CONNECT ANOTHER ACCOUNT VPC CONNECTION THEN FOLLOW THE INSTRUCTION WHILE THE STEPS ARE GOING...######
+# Login to your AWS Account and search th VPC Service and come to VPC Dashboard
+Step 1 ( Creating a Local VPC )
+# Firstly on VPC Dashboard you will see Virtual Private Cloud Section you will see Your VPC option Click it and follow the down steps....
+In your VPC click create VPC
+Name your VPC 
+Then in IPv4 CIDR give the IP Code
+# Remember the CIDR for the VPC should be different from the peering VPC connecion.
+Lastly click create VPC
+# By following the above steps create a VPC in different region if your peeering from another account then it is not needed...
+Step 2 ( Launching Peering Connection )
+# In Virtual Private Cloud Section you will see Peering connection.
+#Click it and follow the down steps....
+	Click the create peering connection 
+	Now enter the name for VPC 
+	Then select the local VPC you have created 
+	In select another VPC to peer account section click My Account
+# If the Peering is from different account then select another account and give the Account ID in it.
+	In region section select another region and select the region give VPC ID of it
+# If you have given the different Account ID then ask the region and enter the region and VPC ID of it. 
+	Then click Create Peering Connection
+# Now your Peering Connection is established and has been created...
+Step 3 ( Accepting the Connection )
+# Go to the VPC Peering section whom you have requested the connection if your have created the connection in the same account then select the region and go to VPC Peeering of it.
+# Now Follow the Steps....
+	Select the VPC in the peering connection
+# Note that the VPC will be showing Pending Acceptance status..
+	Then click actions and click accept request
+# Now the status will change to provisioning
+#Refresh it one two time till the status become Active..
+# Now you are good to go your VPC Peering Connection is active.....
+# After your work is over delete the VPC connections
+==============================================================================
+**Explanation:**
+A VPC peering connection is a networking feature in cloud computing, like AWS , that links separate virtual networks (VPCs) for communication. Resources within these VPCs can talk to each other using private IP addresses, even if they're in different regions. This interaction is seamless, as if they're in the same network. VPC peering is secure, maintaining isolation between VPCs and controlling access. It scales easily and is cost-efficient, eliminating the need for complex hardware. However, it's not transitive (VPC A connected to B and B connected to C doesn't mean A can reach C), and CIDR blocks mustn't overlap.
+
