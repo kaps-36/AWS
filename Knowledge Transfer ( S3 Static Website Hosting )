@@ -1,0 +1,83 @@
+By Kashif Quadri
+15/08/2023
+
+**Challenge :**
+Hey geeks, today I want to give a task that Unleash your creativity while mastering S3 static website hosting. Get ready to impress with a beautifully designed website that's both functional and visually appealing!".
+==============================================================================
+**Task :**
+Ticket: Make a static website from the html and css code provided by the developer.
+==============================================================================
+**Solution :**
+Finally I have got the solutionTo tackle this challenge of creating a dynamic static website using S3 and a free CSS and allocate it with Elastic IP.
+==============================================================================
+**Pre-requisites:**
+•	Have a good knowledge about S3
+•	Knowing the knowledge about website hosting
+•	Have knowledge about HTML,CSS files
+==============================================================================
+
+
+**Objective:**
+The objective is to deploy the website without any complication host the dynamic static website using S3 service.
+.==============================================================================
+**Description:**
+Amazon S3, a cornerstone of Amazon Web Services (AWS), is not only a versatile storage solution but also a powerful platform for hosting static websites. Static website hosting on S3 offers a simple, cost-effective way to publish and distribute web content globally without the need for traditional web servers or complex infrastructure.
+With S3 static website hosting, you can seamlessly deploy HTML, CSS, JavaScript, images, and other assets that comprise your website directly into an S3 bucket. This approach leverages S3's robust capabilities to deliver your content efficiently, benefiting from the inherent scalability, durability, and high availability of the AWS infrastructure.
+Setting up static website hosting on S3 involves a few straightforward steps. First, you create an S3 bucket in your AWS account and configure it for static website hosting through the bucket's properties. This enables you to define the default landing page and error documents for your website. You can then upload your website files into the bucket, taking care to configure the appropriate permissions to allow public access to your content.
+In summary, Amazon S3 static website hosting provides an accessible, scalable, and cost-effective solution for hosting your web content. It combines the benefits of AWS's reliable infrastructure with the simplicity of deploying static websites, making it an ideal choice for personal portfolios, business landing pages, documentation sites, and more. Whether you're a seasoned developer or just starting your web journey, S3 static website hosting offers a powerful way to showcase your content to a global audience.
+==============================================================================
+**Steps:**
+# Login to your AWS Account and search the S3 Service
+Step 1 ( Creating a Bucket )
+# Firstly on S3 Dashboard you will see Bucket option Click it and follow the down steps....
+	Click Create Bucket
+	Give name to bucket
+# Remember the bucket name should be unique and the name should not be used before anyone because S3 is a Global service it will check globally…
+	Then select the AWS region
+	Then in object ownership select ACLs enabled
+# In this section ACLs will be disabled also if your giving policies to the bucket if not you can select the enabled option…
+	Now in block public access section deselect block all public access
+# If you are making the bucket for private purpose then you can block the public access it’s all your choice to keep it as needed…
+	Next in bucket versioning section enable it
+# If the versioning option is enabled it will maintain multiple copies of every changes you do. If you are making the bucket for private purpose you can keep disabled it…
+	Next click the advance setting below down
+	Then enabled the object lock and click the acknowledge box below
+# Object lock helps your data to protect from the loss… 
+	Now finally click on Create Bucket
+Step 2 ( Adding Web Elements )
+# In this part you have to upload the files of website given by the developer or you have downloaded free…
+# You can download the Free-CSS files for practice from this site https://www.free-css.com/
+# Once downloaded extract the files and use it….
+	Firstly click on your bucket and open it
+	Then go to objects tab
+	Then click on upload
+	In flies and folder section click on add files
+	Then drag all the files and folders in the files section
+# These are the html and css files given by the developer or from the downloaded Free-CSS folder  
+	Now click down in the permissions toggle
+	Click on Grant public-read access in predefined ACLs section
+	Then click enable the warning for enabling Grant-access
+	Now click Upload
+# After the uploading is completed click on close…
+Step 3 ( Enabling Static Hosting )
+# This is the final step for Creating the Static Website Hosting
+# Now come to dashboard of bucket and follow the steps…
+	Now click on properties tab
+#Now scroll down the page to last you will there Static Website Hosting Section…
+	Now click on edit in the Static website section
+	Enable the hosting
+	Now in index document section type index.html
+# In this section we type this because all the website details and elements are in index.html file
+	Now save changes
+# After saving you will be redirected to bucket dashboard propetise tab 
+# Now again scroll till last static section…
+# There you will see the Static Website Link in Static Website Hosting Section…
+# Click the link you will see your website page…
+
+####This is the Conclusion for Static Website Hosting####
+==============================================================================
+**Explanation:**
+Creating a static website hosting environment using Amazon S3 involves a series of straightforward steps. To begin, sign in to the AWS Management Console using your account credentials. Once logged in, access the Amazon S3 dashboard by searching for "S3" and selecting it. Within the dashboard, initiate the process by creating a new bucket. Give your bucket a globally unique name and choose the region in which you want it to reside. Afterward, you'll progress through the configuration options, and in this context, skip directly to setting permissions.
+For enabling public access necessary for static website hosting, untick "Block all public access" and acknowledge the implications. Then, move on to the review stage, confirming your choices before clicking "Create bucket." With the bucket established, proceed to enable static website hosting by selecting your newly created bucket and navigating to the "Static website hosting" section in its properties. Here, you can specify the index document (typically "index.html") and, optionally, an error document.
+With the hosting settings configured, it's time to upload your website files. Click the "Upload" button within the bucket, and include all the necessary HTML, CSS, JavaScript, and other assets that constitute your website. Ensure that each uploaded file is set to "public" in terms of permissions, making them accessible to visitors. The public endpoint URL for your static website can be located in the "Static website hosting" section.
+If you desire a custom domain, you can configure a DNS record using Amazon Route 53 or another DNS provider, pointing it to your S3 bucket's endpoint URL. This step facilitates easy access to your website via your preferred domain. Finally, test your newly hosted static website by entering the provided endpoint URL or your custom domain into a web browser. In doing so, you'll witness the successful culmination of the process, having established an efficient and cost-effective platform for your static web content using Amazon S3.
