@@ -1,0 +1,101 @@
+By Kashif Quadri
+16/08/2023
+
+**Challenge :**
+Hey geeks, today I want to give a task to Configure an S3 bucket event to trigger an SNS notification whenever a new object is uploaded. Showcase your skills in setting up this dynamic duo for seamless event notifications. Show us your S3-SNS mastery and level up your AWS game!"
+==============================================================================
+**Task :**
+Ticket: Make a email notification for S3 Bucket.
+==============================================================================
+**Solution :**
+"Challenge Conquered! To achieve S3-SNS harmony, create an S3 bucket event using SNS triggers. Write a SNS function that publishes a message to the designated SNS topic upon new object upload. Configure SNS to send notifications via email or other endpoints. Execute, validate, and bask in the glory of successful S3 event notifications!"
+==============================================================================
+**Pre-requisites:**
+•	Have a good knowledge about S3
+•	Knowing the knowledge about Event Notification
+•	Have knowledge about SNS 
+==============================================================================
+
+
+**Objective:**
+The objective is to "Create a functional S3 event notification system using SNS to alert on new uploads.".
+==============================================================================
+**Description:**
+S3 event notifications coupled with Amazon SNS (Simple Notification Service) provide a powerful mechanism for real-time communication in AWS ecosystems. This integration enables automatic alerts whenever specific events occur within an S3 bucket, such as object uploads or deletions. By configuring S3 to trigger SNS notifications, users can effortlessly propagate event details to various endpoints, including email, SMS, HTTP, or even other AWS services. This approach enhances system responsiveness and promotes efficient data processing, making it a cornerstone for building dynamic, event-driven architectures within the AWS cloud.
+==============================================================================
+**Steps:**
+#Firstly we have to create a S3 bucket as we have done in Static website hosting but without uploading anything…
+# Login to your AWS Account and search the S3 Service
+Step 1 ( Creating a Bucket )
+# Firstly on S3 Dashboard you will see Bucket option Click it and follow the down steps....
+	Click Create Bucket
+	Give name to bucket
+# Remember the bucket name should be unique and the name should not be used before anyone because S3 is a Global service it will check globally…
+	Then select the AWS region
+	Then in object ownership select ACLs enabled
+# In this section ACLs will be disabled also if your giving policies to the bucket if not you can select the enabled option…
+	Now in block public access section select block all public access
+# If you are making the bucket for public purpose then you can remove block the public access it’s all your choice to keep it as needed…
+	Next in bucket versioning section enable it
+# If the versioning option is enabled it will maintain multiple copies of every changes you do. If you are making the bucket for private purpose you can keep disabled it…
+	Next click the advance setting below down
+	Then enabled the object lock and click the acknowledge box below
+# Object lock helps your data to protect from the loss… 
+	Now finally click on Create Bucket
+Step 2 ( Creating SNS Topic )
+# After creating the bucket now lets move to create SNS…
+# Open a aws in new tab and search SNS Service and leave the bucket tab open…
+# To create SNS follow the steps…
+	In SNS dashboard click topics
+	Now click create topic
+	Now click standard in type section
+# By clicking standard it give the notification by Email and in FIFO the service is not available
+	Now enter the name for your topic
+	Lastly click Create Topic
+# Finally your SNS Topic has been created…
+Step 3 ( Enabling Subscription )
+# Now we have to create a SNS sub for the topic…
+# Come to the topics dashboard and follow the steps…
+	Click your topic
+# Scroll down to see create subscription
+	Click create subscription
+	Now select EMAIL in protocol section
+	Then enter Email ID in endpoint section
+# You have to add Email ID on which you want the notifications
+	Now click create subscription
+# After clicking it go to the email you entered for verification
+# In mail click confirm subscription then you are done 
+Step 4 ( Setting Event Notification )
+# After creating SNS Subscription come to the S3 Bucket tab and leave the SNS tab as it is…
+# We have set event notification click on the bucket and open it now follow the steps…
+	In bucket click properties tab
+# Now scroll down the properties and down you will see event notification section 
+	In event notification click create notification
+	Now enter the notification name
+# You can specify the notification name as per your need for what the notification if for Eg. Accounts, bills, etc…
+	Next in event types section you have to select the services you want notifications
+# In this section select the services as per your need for what you need to be notify…
+# Now scroll down till the destination section
+	In destination section select SNS topic
+	Next click your SNS topic from the dropbox
+	Now click save changes
+# Your event notification is now set…
+Step 5 ( Adding Element to check )
+# In this part we will have to upload some files to check whether the event notification is working properly or not…
+# You can upload the Free-CSS files for practice which you have downloaded before…	
+
+	Firstly click on your bucket and open it
+	Then go to objects tab
+	Then click on upload
+	In flies and folder section click on add files
+	Then drag the files and folders in the files section
+	Now click Upload
+# After the uploading is done check the email id you will receive the notification about uploading the file…
+# By these you will receive all the notification on email for what services you have selected…
+
+#### This is the conclusion for Event Notification ####
+==============================================================================
+**Explanation:**
+S3 event notifications using an SNS (Simple Notification Service) topic provide a straightforward way to receive alerts about events occurring within an S3 bucket, all without the need for AWS Lambda. When an event, like an object upload or deletion, occurs in the specified S3 bucket, the configured S3 event notification triggers a message to be sent to the associated SNS topic.
+Subscribers to the SNS topic can include various endpoints like email addresses, SMS numbers, or HTTP/HTTPS URLs. These subscribers will receive notifications directly from the SNS topic whenever the corresponding events take place in the S3 bucket. This mechanism enables real-time communication and automation without requiring the additional complexity of Lambda functions.
+This approach is ideal for scenarios where you only need to be informed about events and don't require additional processing or logic beyond sending notifications. It offers a lightweight solution for staying updated on S3 events while streamlining the architecture.
