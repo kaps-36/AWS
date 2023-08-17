@@ -1,0 +1,99 @@
+By Kashif Quadri
+17/08/2023
+
+**Challenge :**
+Hey Geeks, I have brought you some new thrilling challenge In this challenge, you will demonstrate your skills in setting up Amazon Elastic File System (EFS) and successfully mounting it on an Amazon EC2 instance.
+==============================================================================
+**Task :**
+Ticket: You have to create a elastic file system storage and mount it to EC2
+==============================================================================
+**Solution :**
+WOW !!! I have completed the challenge and I have done it using EFS service where I deploy file system and I have mount two instances with one storage…
+==============================================================================
+**Pre-requisites:**
+•	Have a good knowledge about EFS
+•	Knowing the knowledge about EC2
+•	Have knowledge about NFS
+==============================================================================
+
+
+**Objective:**
+The objective is to connect multiple instances with one storage…
+==============================================================================
+**Description:**
+Amazon Elastic File System (Amazon EFS) is a scalable and fully managed cloud-based file storage service offered by Amazon Web Services (AWS). Designed to provide a flexible and easy-to-use solution for sharing and storing files across multiple Amazon Elastic Compute Cloud (Amazon EC2) instances, EFS offers a robust platform for applications that require shared file storage.
+EFS is built to address various use cases, including content repositories, web serving, application development, data backup, and analytics. It offers seamless integration with other AWS services and provides features such as high availability, scalability, security, and cost efficiency.
+ ==============================================================================
+**Steps:**
+# In this we are going to setup EFS storage linking in to Multiple instance, So let’s get started…
+Step 1 ( Creating Instance )
+# Firstly we have to setup 2 instances for practice..
+# Now search EC2 service in the AWS console and go to EC2 Dashboard and follow the below steps…
+	After coming to dashboard click on launch instance
+	Give the name to instance
+	Select the AMI as AWS Linux
+	Now generate a key pair and give name to it 
+# Remember always generate a new key pair with new instances
+	Then click launch Instance
+# Note : Make 2 Instances for testing…
+# Now open the instances, after opening instances install httpd in it by following command…
+	Sudo yum install httpd –y
+# Note : You have to install HTTPD in every instances you launched for practice…
+Step 2 ( Creating EFS )
+# Now open EFS service in a new tab and leave the EC2 instance tab as it is…
+# After coming to EFS dashboard follow the below steps…
+	Click file system on the dashboard
+	Then click create file system
+	Give the name to file system and click create
+	Now open the file system
+	Then click attach
+# After clicking you will see a dialogue box 
+	In the dialogue box click mount via DNS
+	Now copy the using NFS client link
+# After copying the link go to EC2 instance tab and run one of the instance
+	Now paste the link in the linux instance
+	After pasting link delete the EFS at the end add /var/www/html
+	Hit enter
+# By this your EC2 instance will be mounted to EFS storage…
+# Note : Paste the link and repeat the process in every instance you created…
+Step 3 ( Setting up SG )
+# Now go back to EFS tab and scroll down and click network section and follow the steps…
+	Copy the security group ID
+# Now open VPC dashboard in another tab..
+	After opening VPC dashboard on left side see for security 
+	In security click security group
+	Paste the copied security group in the search bar and select it
+	Select the security group
+	Click on actions
+	Then click on edit Inbound Rules
+	Click on add rules
+	Select Type = NFS , Port range = 2049, Source = 0.0.0.0/0
+	Then click save rules
+# Now go back to EC2 instance and follow the steps…
+	In instance type df –h
+# After typing it it will show the EFS name in the list if doesn’t show change add one mor rule as follows…
+	Select Type = Custom TCP, Port range = 0, Source = 0.0.0.0/0
+# now again repeat the up command…
+# Note: Check this command in all mounted instances…
+Step 4 ( Checking the instances mounted to storage or not )
+# Now here comes the final step to check the storage is mounted or not…
+# First come to one of the instance window and follow the below…
+	Now type cd var/www/html
+# In this way you will enter the html folder enter this command in all other instances as well…
+# Now we are going to add some files in the folder…
+# Note : Create the files in anyone of the instance not all
+	Type sudo touch city.txt
+	Sudo touch name.html
+# Make files as per your choice it is not restricted…
+	Now type ls
+# This will show you the files created in the directory
+# Now go to another instances and type the ls command there also the same files will going to show if not then the instance is not mounted to storage and if the files are shown then the instance is mounted…
+# Now make file any instance it will show in all instances were the storage is mounted…
+#### Here EFS Mounting come to conclusion ####
+==============================================================================
+**Explanation:**
+Mounting Amazon Elastic File System (Amazon EFS) onto an Amazon Elastic Compute Cloud (Amazon EC2) instance involves establishing a shared file storage system that can be concurrently accessed by multiple EC2 instances. Amazon EFS is a managed file storage service tailored to offer scalable and highly accessible file storage within the AWS cloud. The process of mounting an EFS filesystem to an EC2 instance allows for seamless file and data sharing among various instances, thus facilitating collaborative efforts and ensuring data uniformity.
+The procedure starts by creating an Amazon EFS filesystem via the AWS Management Console, where settings such as storage capacity, throughput, and availability zone(s) are defined. Ensuring the associated security group permits traffic on essential ports like the NFS port 2049 is crucial. Identifying the EC2 instance's ID, subnet, and security group comes next. On the EC2 side, installing the NFS utilities might be necessary, which is accomplished via an SSH connection and the command sudo yum install -y nfs-utils.
+Subsequently, the EFS filesystem can be mounted to a chosen directory on the EC2 instance using the sudo mount command with specific options, including the EFS ID, availability zone, and mount target. Optionally, automating the mounting process upon instance reboot can be achieved by adding an entry to the /etc/fstab file. Testing the setup involves navigating to the mount directory and creating or copying files to confirm the EFS mount's proper functionality, enabling synchronized access and modifications across multiple EC2 instances.
+Through these steps, one can effectively establish a shared file storage system by mounting an Amazon EFS filesystem to an EC2 instance. This approach streamlines collaborative workflows, capitalizes on EFS's scalability and robustness, and maintains data consistency among participating instances. It's essential to adhere to security best practices and configure access permissions appropriately to ensure data integrity and secure usage.
+
