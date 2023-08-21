@@ -25,12 +25,11 @@ A load balancer is a crucial component in modern cloud computing architectures, 
 **Steps:**
 Step 1( Launching Instance )
 # Firstly Launch Linux Instance and allow the SSH and HTTP Permissions from Network Setting.
-# After Approving the permission go to Advance Setting and write the below steps in user data block.
-	#! /bin/bash
+# Now launch the instance and type the following commands in it...
+ sudo yum update
 	sudo yum install httpd –y
 	sudo systemctl start httpd 
 	sudo systemctl enable httpd
-# Launch the instance
 Step 2( Downloading Winscp and Free-CSS Template )
 # Now Download Winscp on your windows/mac for tranfering files code( link = https://winscp.net/eng/index.php )
 # Then download a free-css template for the website ( link = https://www.free-css.com ) and extract it
